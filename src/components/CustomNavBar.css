@@ -1,0 +1,37 @@
+.navbar-inverse{
+    padding-top:5px;
+    padding-bottom:5px;
+    }
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .navbar-brand>img {
+        padding: 0px 7px;
+      }
+    
+    .navbar-Style{
+    font-size: 20px;
+    }
+    /*edit active css from bootstrap for nav items */
+    .navbar-inverse .navbar-nav>.active>a{
+      background-color: transparent;
+    }
+  /*edit the hamburger logo */
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+  background-color: #000;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #000;
+}
+ /* set active color with active pseudo class
+  .navbar-inverse .navbar-nav>li>a:active {
+      color: #fff;
+      background-color: transparent;
+  } */
+    /*.navbar-inverse .navbar-nav > li > a {
+      color : //desired color here
+    } changes the navbar items color*/

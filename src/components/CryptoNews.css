@@ -1,0 +1,43 @@
+.article-image-a{
+    float: left;
+    width:19rem;
+    margin-top:1rem;
+    margin-bottom:1rem;
+}
+.article-image{
+   
+    width: 17rem;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+
+.article-row{
+    border: solid #00000017 1px;
+    margin-bottom: 1.5rem;
+    border-radius: 5rem;
+}
+.article-row p{
+    font-size:1.4rem;
+}
+.article-title{
+    font-weight: 700;
+    color: #01d567;
+}
+.article-sourceinfo-name{
+    font-weight: 800;
+    color:orange;
+}
+.article-title-a:focus{
+    color: #01d567;
+}
+.article-title-a:hover{
+    color: #01d567;
+}
+@media screen and (min-width: 768px){
+    /* Make article body look better on bigger screens when there is too much text,
+     so category doesn't go under picture
+    */
+    .article-body{
+        margin-left:19rem;
+    }
+    } 

@@ -1,0 +1,39 @@
+.h2, h2 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+.header-image{
+ width:100%;   
+}
+h3{
+    font-size:2.8rem;
+}
+/* Adjust jumbotron buttons */
+a button{
+    margin-right: .5rem;
+    margin-top: .5rem;
+}
+p {
+    font-size:2rem;
+}
+/* Adjust width for navbar which is fixed top */
+.container{
+    margin-top:60px;
+}
+.jumbotron{
+   
+    margin-bottom:0;
+    padding:10rem;
+    background-image:url(../assets/Images/bank-bitcoin-business-844124_Cropped.jpg);
+    color:white;
+}
+/* Edit Bootstrap css for Jumbotron */
+@media screen and (min-width: 768px){
+/*.container .jumbotron, .container-fluid .jumbotron {
+    padding-left: 15px;
+} */
+.h2, h2 {
+    font-size: 5rem;
+
+}
+} 

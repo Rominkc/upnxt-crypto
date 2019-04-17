@@ -1,0 +1,10 @@
+
+/* Styles affect the position of the footer so that it always stays at the bottom, 200px for padding to account
+for 100px height of footer, and 100px of margin that would be there if footer was not position:absolute(i.e it is out
+of the flow of the page so margin doesn't affect it) */
+
+.main-div{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 200px;
+}

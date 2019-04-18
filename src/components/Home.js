@@ -20,21 +20,21 @@ export default class Home extends Component {
                             <a href="https://www.youtube.com/watch?v=kubGCSj5y3k"
                                 target="_blank"
                                 rel="noopener noreferrer" >
-                                <Button>
+                                <Button className="home-page-btn">
                                     Learn More
                                 </Button>
                             </a>
                             <a href="https://www.youtube.com/watch?v=DHtilrc4zLQ"
                                 target="_blank"
                                 rel="noopener noreferrer" >
-                                <Button>
+                                <Button className="home-page-btn">
                                     Investment Tips
                                 </Button>
                             </a>
                             <a href="https://www.cryptocompare.com/exchanges/#/overview"
                                 target="_blank"
                                 rel="noopener noreferrer" >
-                                <Button>
+                                <Button className="home-page-btn">
                                     Exchanges
                                 </Button>
                             </a>

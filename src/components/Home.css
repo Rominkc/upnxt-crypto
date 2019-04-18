@@ -9,8 +9,9 @@ h3{
     font-size:2.8rem;
 }
 /* Adjust jumbotron buttons */
-a button{
-    margin-right: .5rem;
+a button.home-page-btn{
+    font-size:.9rem;
+    margin-right: .75rem;
     margin-top: .5rem;
 }
 p {
@@ -35,5 +36,8 @@ p {
 .h2, h2 {
     font-size: 5rem;
 
+}
+a button.home-page-btn{
+    font-size:1.4rem;
 }
 } 

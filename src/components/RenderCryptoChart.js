@@ -22,7 +22,7 @@ const RenderCryptoChart =(props)=>{
                         <VictoryZoomCursorContainer
                         
                         allowZoom= {false}
-                        cursorDimension="x"
+                       
                         cursorLabel={(d) =>(`USD $${d.y.toFixed(2)} Date: ${d.x.toLocaleDateString("en-US")}`)}
                         zoomDimension="x"
                         zoomDomain={props.zoomDomain}

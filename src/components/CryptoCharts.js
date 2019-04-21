@@ -26,7 +26,9 @@ export default class CryptoCharts extends Component {
         coinSymbol:'BTC',
         userInput:'BTC',
         validInput:true,
-        zoomDomain:{}       
+        zoomDomain:{}, 
+        error: false,
+        errorMsg:'*Please enter a valid input'      
     }
     // handle change for when user changes zoom
     handleZoom =(domain)=> {
@@ -47,6 +49,7 @@ export default class CryptoCharts extends Component {
             //console.log(coinDataArray[0])
            
             this.setState({data:coinDataArray,
+                           error:false,                             
                            coinSymbol,
                            validInput:validEntry,
                            //instantiate zoom domain based on lowest and highest date from array
@@ -55,7 +58,11 @@ export default class CryptoCharts extends Component {
                                             })
           
            // console.log(this.state); 
-           }))  : this.setState({validInput:validEntry})
+           })).catch(error=>{
+            this.setState({error:true,
+                           errorMsg:`Unfortunately, there is no data for the symbol '${this.state.userInput}.' Please enter a different symbol.` })
+           })  : this.setState({validInput:validEntry,
+                                errorMsg:'*Please enter a valid symbol', })
     } 
 
     //Get data from API lifecycle method called when component mounts to screen
@@ -87,7 +94,7 @@ export default class CryptoCharts extends Component {
                     <Col xs={12} >
                         
                         <h2>Cryptocurrency Historical Data</h2><br/> 
-                        <p>OHLC historical data for hundreds of cryptocurrencies (data aggregated on a 30 day basis)</p>
+                        <p>OHLC historical data for thousands of cryptocurrencies (data aggregated on a 30 day basis)</p>
                         <p>Please Enter the symbol for the currency you would like to view. (i.e BTC,ETH,LTC)</p>
                         <p>A list of valid currencies symbols can be found<span>{/*adds a space*/} </span> 
                             <a 
@@ -107,7 +114,7 @@ export default class CryptoCharts extends Component {
                 
                 <Row>
                     <Col xs={12}>
-                     { this.state.validInput ?  
+                     { this.state.validInput && !this.state.error ?  
                      <RenderCryptoChart data={this.state.data}
                                         handleZoom={this.handleZoom}
                                         zoomDomain={this.state.zoomDomain}/> : 
@@ -115,7 +122,7 @@ export default class CryptoCharts extends Component {
                         style={{marginTop:'100px',
                         color:'red',
                         fontSize:'5rem'}}> 
-                        *Please enter a valid input
+                       {this.state.errorMsg}
                         </p>
                       }
 

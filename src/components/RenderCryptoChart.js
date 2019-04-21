@@ -4,7 +4,7 @@ import {VictoryChart ,VictoryLegend,VictoryBrushContainer,VictoryAxis, VictoryGr
 
 const VictoryZoomCursorContainer = createContainer("zoom", "cursor");
 const RenderCryptoChart =(props)=>{
-    console.log('I was rendered')
+    //console.log('I was rendered')
     const close = pointCreator(props.data,'close')
     const open = pointCreator(props.data,'open')
     const high = pointCreator(props.data,'high')

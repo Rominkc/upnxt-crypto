@@ -9,7 +9,7 @@ import CryptoNews from './components/CryptoNews';
 import CryptoCharts from './components/CryptoCharts';
 import CustomFooter from './components/CustomFooter';
 import ScrollToTop from './components/ScrollToTop';
-
+// must first cd into Client before npm start, did it because was thinking of implementing a node server but decided not to
 class App extends Component {
   render() {
     

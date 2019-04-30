@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import pointCreator from './pointCreator'
 import {VictoryChart ,VictoryLegend,VictoryBrushContainer,VictoryAxis, VictoryGroup, VictoryArea, VictoryLabel, createContainer} from 'victory';
-
+// Special hybrid container from Victory.js that inherits attributes/props from the two different container types
 const VictoryZoomCursorContainer = createContainer("zoom", "cursor");
 const RenderCryptoChart =(props)=>{
     //console.log('I was rendered')
@@ -9,8 +9,52 @@ const RenderCryptoChart =(props)=>{
     const open = pointCreator(props.data,'open')
     const high = pointCreator(props.data,'high')
     const low = pointCreator(props.data,'low')
+    // implement hooks, have checkbox which lets user choose which data they want rendered out of the 4 values
+    // hooks lets you use state without writing a class
+   const [highGraph, setHighGraph] = useState(true)
+   const [openGraph, setOpenGraph] = useState(true)
+   const [closeGraph, setCloseGraph] = useState(true)
+   const [lowGraph, setLowGraph] = useState(true)
                return(
                <div> 
+                    <form>
+                        <label>
+                            High:
+                            <input
+                                name="one"
+                                type="checkbox"
+                                checked={highGraph}
+                                onChange={()=> setHighGraph(!highGraph)}
+                                />
+                        </label>
+                        <label>
+                            Open:
+                            <input
+                                name="one"
+                                type="checkbox"
+                                checked={openGraph}
+                                onChange={()=> setOpenGraph(!openGraph)}
+                                />
+                        </label>
+                        <label>
+                            Close:
+                            <input
+                                name="one"
+                                type="checkbox"
+                                checked={closeGraph}
+                                onChange={()=> setCloseGraph(!closeGraph)}
+                                />
+                        </label>
+                        <label>
+                            Low:
+                            <input
+                                name="one"
+                                type="checkbox"
+                                checked={lowGraph}
+                                onChange={()=> setLowGraph(!lowGraph)}
+                                />
+                        </label>
+                    </form>
                 <VictoryChart
                     domainPadding={20}
                     allowZoom={false}
@@ -58,30 +102,39 @@ const RenderCryptoChart =(props)=>{
                        style={{
                         data: { strokeWidth: 3, fillOpacity: 0.4 }
                       }}>
+                      {highGraph ?
                         <VictoryArea
                             scale={{x:'time'}}
                             data={high}
                             style={{ data: { strokeWidth: .5, fill:'#1111c5ba' } }}
                             
                             />
+                            :[]}
+
+                      {openGraph ?
                         <VictoryArea
-                        scale={{x:'time'}}
-                        data={open}
-                        style={{ data: { strokeWidth: .5, fill:'green' } }}
-                        
-                        />
+                            scale={{x:'time'}}
+                            data={open}
+                            style={{ data: { strokeWidth: .5, fill:'green' } }}
+                            
+                            />
+                            :[]}
+                       {closeGraph ?     
                         <VictoryArea
-                        scale={{x:'time'}}
-                        data={close}
-                        style={{ data: { strokeWidth: .5, fill:'red' } }}
-                        
-                        />
+                            scale={{x:'time'}}
+                            data={close}
+                            style={{ data: { strokeWidth: .5, fill:'red' } }}
+                            
+                            />
+                            :[]}
+                       {lowGraph ?
                         <VictoryArea
-                        scale={{x:'time'}}
-                        data={low}
-                        style={{ data: { strokeWidth: .5, fill:'yellow' } }}
-                        
-                        />
+                            scale={{x:'time'}}
+                            data={low}
+                            style={{ data: { strokeWidth: .5, fill:'yellow' } }}
+                            
+                            />
+                            :[]}
                   
                     
                     </VictoryGroup>
@@ -103,30 +156,38 @@ const RenderCryptoChart =(props)=>{
                      <VictoryAxis tickFormat={(x) => new Date(x).getFullYear()}/>
                      
                     <VictoryGroup>
+                    {highGraph ?
                         <VictoryArea
                             scale={{x:'time'}}
                             data={high}
                             style={{ data: { strokeWidth: .5, fill:'#1111c5ba' } }}
                             
                             />
+                            :[]}
+                    {openGraph ?
                         <VictoryArea
-                        scale={{x:'time'}}
-                        data={open}
-                        style={{ data: { strokeWidth: .5, fill:'green' } }}
-                        
-                        />
+                            scale={{x:'time'}}
+                            data={open}
+                            style={{ data: { strokeWidth: .5, fill:'green' } }}
+                            
+                            />
+                            :[]}
+                       {closeGraph ?     
                         <VictoryArea
-                        scale={{x:'time'}}
-                        data={close}
-                        style={{ data: { strokeWidth: .5, fill:'red' } }}
-                        
-                        />
+                            scale={{x:'time'}}
+                            data={close}
+                            style={{ data: { strokeWidth: .5, fill:'red' } }}
+                            
+                            />
+                            :[]}
+                       {lowGraph ?
                         <VictoryArea
-                        scale={{x:'time'}}
-                        data={low}
-                        style={{ data: { strokeWidth: .5, fill:'yellow' } }}
-                        
-                        />
+                            scale={{x:'time'}}
+                            data={low}
+                            style={{ data: { strokeWidth: .5, fill:'yellow' } }}
+                            
+                            />
+                            :[]}
                     
                     
                     </VictoryGroup>

@@ -11,6 +11,9 @@ const RenderCryptoChart =(props)=>{
     const low = pointCreator(props.data,'low')
     // implement hooks, have checkbox which lets user choose which data they want rendered out of the 4 values
     // hooks lets you use state without writing a class
+    //set value to determine if button is able to be unchecked, one button should always be 'checked' so doesn't allow a button to be 'unchecked' if value is <=1
+    const [activeBtnCount, setActiveBtnCount]=useState(4)
+    //state hooks for graphs to be rendered
    const [highGraph, setHighGraph] = useState(true)
    const [openGraph, setOpenGraph] = useState(true)
    const [closeGraph, setCloseGraph] = useState(true)
@@ -24,8 +27,23 @@ const RenderCryptoChart =(props)=>{
                                 name="one"
                                 type="checkbox"
                                 checked={highGraph}
-                                onChange={()=> setHighGraph(!highGraph)}
-                                />
+                                onChange={()=> 
+                                    {
+                                        if(highGraph && activeBtnCount>1){
+                                        setHighGraph(!highGraph)
+                                        setActiveBtnCount(activeBtnCount-1)
+                                        }
+                                        else if (!highGraph && activeBtnCount >1){
+                                        setHighGraph(!highGraph)
+                                        setActiveBtnCount(activeBtnCount+1)
+                                        }
+                                        else if(!highGraph && activeBtnCount <=1){
+                                        setHighGraph(!highGraph)
+                                        setActiveBtnCount(activeBtnCount+1)
+                                        }
+                                    }
+                                }
+                                    />
                         </label>
                         <label>
                             Open:
@@ -33,7 +51,22 @@ const RenderCryptoChart =(props)=>{
                                 name="one"
                                 type="checkbox"
                                 checked={openGraph}
-                                onChange={()=> setOpenGraph(!openGraph)}
+                                onChange={()=> 
+                                    {
+                                        if(openGraph && activeBtnCount>1){
+                                        setOpenGraph(!openGraph)
+                                        setActiveBtnCount(activeBtnCount-1)
+                                        }
+                                        else if (!openGraph && activeBtnCount >1){
+                                        setOpenGraph(!openGraph)
+                                        setActiveBtnCount(activeBtnCount+1)
+                                        }
+                                        else if(!openGraph && activeBtnCount <=1){
+                                        setOpenGraph(!openGraph)
+                                        setActiveBtnCount(activeBtnCount+1)
+                                        }
+                                    }
+                                }
                                 />
                         </label>
                         <label>
@@ -42,7 +75,22 @@ const RenderCryptoChart =(props)=>{
                                 name="one"
                                 type="checkbox"
                                 checked={closeGraph}
-                                onChange={()=> setCloseGraph(!closeGraph)}
+                                onChange={()=> 
+                                    {
+                                        if(closeGraph && activeBtnCount>1){
+                                        setCloseGraph(!closeGraph)
+                                        setActiveBtnCount(activeBtnCount-1)
+                                        }
+                                        else if (!closeGraph && activeBtnCount >1){
+                                        setCloseGraph(!closeGraph)
+                                        setActiveBtnCount(activeBtnCount+1)
+                                        }
+                                        else if(!closeGraph && activeBtnCount <=1){
+                                        setCloseGraph(!closeGraph)
+                                        setActiveBtnCount(activeBtnCount+1)
+                                        }
+                                    }
+                                }
                                 />
                         </label>
                         <label>
@@ -51,7 +99,22 @@ const RenderCryptoChart =(props)=>{
                                 name="one"
                                 type="checkbox"
                                 checked={lowGraph}
-                                onChange={()=> setLowGraph(!lowGraph)}
+                                onChange={()=> 
+                                    {
+                                        if(lowGraph && activeBtnCount>1){
+                                        setLowGraph(!lowGraph)
+                                        setActiveBtnCount(activeBtnCount-1)
+                                        }
+                                        else if (!lowGraph && activeBtnCount >1){
+                                        setLowGraph(!lowGraph)
+                                        setActiveBtnCount(activeBtnCount+1)
+                                        }
+                                        else if(!lowGraph && activeBtnCount <=1){
+                                        setLowGraph(!lowGraph)
+                                        setActiveBtnCount(activeBtnCount+1)
+                                        }
+                                    }
+                                }
                                 />
                         </label>
                     </form>
@@ -76,7 +139,7 @@ const RenderCryptoChart =(props)=>{
                         x={105} y={150}
                         desc='USD amount and date for selected point'
                         style={{fontSize: 20 }}
-                        events={{onChange: (evt) => console.log("x: " + evt.target.x)}}
+                       
                         />}
                             
 

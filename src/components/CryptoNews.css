@@ -13,8 +13,8 @@
 
 .article-row{
     /*border: solid #00000017 1px; */
-    margin-bottom: 1.5rem;
-    border-radius: 5rem;
+    margin-top: 3rem;
+    border-bottom: 1px solid #ddd;
 }
 .article-row p{
     font-size:1.4rem;
@@ -25,7 +25,7 @@
 }
 .article-sourceinfo-name{
     font-weight: 800;
-    color:orange;
+    color:#292931;
 }
 .article-title-a:focus{
     color: #01d567;

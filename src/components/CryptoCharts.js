@@ -8,14 +8,11 @@ import coinList from './coinList';
 
  // needed for react-timeseries-charts to specify the data
 
-
-//const apiKey= '?apikey=EDF05C8A-8D9D-477B-A056-90FDB99C20F8';
-//const baseUrl ='https://rest.coinapi.io';
 // Two above are for coin API
 const baseUrl='https://min-api.cryptocompare.com';
 const coinDataUrlpt1='/data/histoday?fsym=';
 const coinDataUrlpt2='&tsym=USD&limit=1000&aggregate=30';
-//const apiKey='&apikey=3b881008384ac0d0e22294c065aed977c394f51d2a959fbe1ffdc9c5f70f745f';
+
 /* Function to transform data received from get request into x,y values that will be used for chart
 Specify type to determine Y value as x value is constant between all values i.e time is the shared value for all types*/
 

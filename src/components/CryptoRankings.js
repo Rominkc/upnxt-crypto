@@ -12,7 +12,7 @@ import './CryptoRankings.css';
 const baseUrl='https://min-api.cryptocompare.com';
 const coinDataUrl1='/data/top/mktcapfull?limit=20&tsym=USD';
 const coinDataUrl2='/data/top/totalvolfull?limit=20&tsym=USD';
-//const apiKey='&apikey=3b881008384ac0d0e22294c065aed977c394f51d2a959fbe1ffdc9c5f70f745f';
+
 export default class CryptoRankings extends Component {
     state = {
         dataMktCap:[],

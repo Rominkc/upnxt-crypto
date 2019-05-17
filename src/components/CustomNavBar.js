@@ -30,10 +30,10 @@ const CustomNavBar =(props)=>  {
               className={props.location.pathname=== "/crypto-news" ? 'active': ''}>
               News
               </NavItem>
-              <NavItem eventKey={4} componentClass={Link} href="/about" to="/about"
+             {/* <NavItem eventKey={4} componentClass={Link} href="/about" to="/about"
               className={window.location.pathname=== "/about" ? 'active': ''}>
               About
-              </NavItem>
+              </NavItem> */}
       
           </Nav>
           </Navbar.Collapse>

@@ -22,7 +22,7 @@ class App extends Component {
         <Route path ="/about" component ={About}/>
         <Route path ="/crypto-rankings" component ={CryptoRankings}/>
         <Route path ="/crypto-charts" component ={CryptoCharts}/>
-        <Route path ="/crypto-news" component ={CryptoNews}/>
+       {/* <Route path ="/crypto-news" component ={CryptoNews}/> */}
         <CustomFooter/>
         </div>
         </ScrollToTop>

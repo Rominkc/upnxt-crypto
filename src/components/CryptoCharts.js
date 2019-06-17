@@ -92,16 +92,18 @@ export default class CryptoCharts extends Component {
                         
                         <h2>Cryptocurrency Historical Data</h2><br/> 
                         <p>OHLC historical data for thousands of cryptocurrencies (data aggregated on a 30 day basis)</p>
-                        <p>Please Enter the symbol for the currency you would like to view. (i.e BTC,ETH,LTC)</p>
+                        <p>Please enter the symbol/ID for the currency you would like to view. (i.e BTC,ETH,LTC)</p>
                         <p>A list of valid currencies symbols can be found<span>{/*adds a space*/} </span> 
                             <a 
                                 href='https://github.com/crypti/cryptocurrencies'
                                 target="_blank"
-                                rel="noopener noreferrer">here</a>
+                                rel="noopener noreferrer">
+                                here
+                            </a>
                         </p>
                         <form onSubmit={this.handleSubmit}>
                             <label>
-                            Coin Name:
+                            Coin ID:
                             <input type="text" spellCheck="false" value={this.state.userInput} onChange={this.handleChange} />
                             </label>
                             <input type="submit" value="Submit" />

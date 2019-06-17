@@ -2,13 +2,21 @@
     bottom: 0;
     width:100%;
     background-color:black;
-    height:75px;
+    height:90px;
     display:flex;
     color:white;
     position:absolute;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .footer-brandname{
 font-size:1.5rem;
+
+}
+.footer-content{
+    font-size:1.2rem;
+}
+.footer-brandname > a,.footer-content > a{
+    color:white;
 }

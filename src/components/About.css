@@ -1,3 +1,10 @@
 .header-image{
     width:100%;   
    }
+.header-about-title{
+    text-align: center;
+    margin-top: 50px;   
+   }
+.header-about-content{
+    font-size: 2.5rem;
+}

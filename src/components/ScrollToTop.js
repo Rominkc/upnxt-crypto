@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 /* Used to scroll to the top of each tab when the user switches tabs */
 class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {

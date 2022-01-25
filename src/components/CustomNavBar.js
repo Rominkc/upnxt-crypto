@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navbar, Nav, NavItem, Image} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import navLogoImg from'../assets/Images/Toptenlogo1.png';
 import './CustomNavBar.css';
 //component class is equiv to 'as' and Grid is equiv to 'Container' in new bootstrap
